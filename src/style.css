@@ -1,0 +1,83 @@
+.weather {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 45px;
+  padding: 20px;
+  border: 1px solid #dddddd;
+  border-radius: 15px;
+  width: 50%;
+  font-family: "Quicksand", sans-serif;
+
+  background: linear-gradient(
+    180.3deg,
+    rgb(221, 221, 221) 5.5%,
+    rgb(110, 136, 161) 90.2%
+  );
+}
+
+.search-button {
+  margin: 0 auto;
+  color: #fff;
+  background: #bbc3cb;
+  border: #bbc3cb;
+  box-shadow: 1px 1px 1px 0.5px rgb(0 0 0 / 10%);
+}
+
+.today {
+  max-width: 70px;
+}
+
+.temperature {
+  font-size: 40px;
+  font-weight: 500;
+}
+
+a {
+  text-decoration: none;
+  transition: all 200ms ease-in-out;
+}
+
+a:hover {
+  color: #768fa7;
+}
+
+.celsius {
+  font-size: medium;
+  position: relative;
+  top: -20px;
+  color: #3d4a57;
+}
+
+.fahrenheit {
+  font-size: medium;
+  position: relative;
+  top: -20px;
+  color: #3d4a57;
+}
+
+.symbol {
+  font-size: medium;
+  position: relative;
+  top: -20px;
+}
+
+.condition {
+  text-align: center;
+  position: relative;
+  list-style-type: none;
+  padding: 0;
+  font-size: small;
+}
+
+.future {
+  max-width: 40px;
+}
+
+.low {
+  color: #e0e1e2;
+}
+
+.high {
+  color: #262626;
+}
