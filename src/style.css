@@ -32,7 +32,7 @@
   position: relative;
   font-size: 50px;
   font-weight: 400;
-  top: 15px;
+  top: 14px;
 }
 
 a {
@@ -90,4 +90,8 @@ a:hover {
 
 .high {
   color: #262626;
+}
+
+.source {
+  color: #7e94a9;
 }

@@ -19,7 +19,7 @@
   <body>
     <div class="container text-center">
       <div class="weather">
-        <form>
+        <form id="search-city">
           <div class="row">
            <div class="col-9">
             <input 
@@ -39,7 +39,7 @@
             <h1>Venice</h1>
           </li>
           <li>
-            <h6>Thursday 13:50</h6>
+            <h6 id="time">Thursday 13:50</h6>
           </li>
           <li>
             <h6>Cloudy</h6>
@@ -56,13 +56,13 @@
          <div class="col-6">
           <ul class="condition">
             <li>
-              Precipitation: 2%
+              Precipitation: <span id="precipitation">2</span>%
             </li>
             <li>
-              Humidity: 83%
+              Humidity: <span id="humidity">83</span>%
             </li>
             <li>
-              Wind: 8 km/h
+              Wind: <span id="wind">8</span> km/h
             </li>
           </ul>
          </div>
@@ -108,6 +108,9 @@
         </div>
       </div>
     </div>
+    <small>
+      <a href="https://github.com/FaezehBehroozi/Vanilla-Weather-App" class="source" >Open-source code</a> by Faezeh Behroozi
+    </small>
     <script src="src/app.js"></script>
   </body>
 </html>
