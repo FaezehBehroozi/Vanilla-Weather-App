@@ -16,7 +16,7 @@ function formatDate(timestamp) {
     hour = `0${hour}`;
   }
   if (minute < 10) {
-    minute = `0${min}`;
+    minute = `0${minute}`;
   }
   return `${day} ${hour}:${minute}`;
 }
