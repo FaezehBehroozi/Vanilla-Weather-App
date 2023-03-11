@@ -80,6 +80,10 @@ a:hover {
   padding: 0;
 }
 
+.description::first-letter {
+  text-transform: capitalize;
+}
+
 .future {
   max-width: 40px;
 }
