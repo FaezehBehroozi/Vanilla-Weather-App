@@ -42,9 +42,19 @@ function showTemperature(response) {
   icon.setAttribute("alt", response.data.weather[0].description);
 }
 
-let units = "metric";
-let city = "Venice";
-let apiKey = "2a2eaa51d996796495bf456e5b58adf4";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
+function searchCity(city) {
+  let units = "metric";
+  let apiKey = "2a2eaa51d996796495bf456e5b58adf4";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
+  axios.get(apiUrl).then(showTemperature);
+}
 
-axios.get(apiUrl).then(showTemperature);
+function handleSubmit(event) {
+  event.preventDefault();
+  let cityInput = document.querySelector("#city-input");
+  searchCity(cityInput.value);
+}
+
+searchCity("Venice");
+let form = document.querySelector("#search-city");
+form.addEventListener("submit", handleSubmit);
