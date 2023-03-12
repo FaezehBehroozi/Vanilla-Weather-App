@@ -29,8 +29,9 @@ function showTemperature(response) {
   let humidity = document.querySelector("#humidity");
   let wind = document.querySelector("#wind-speed");
   let icon = document.querySelector("#icon");
+  celsiusTemperature = response.data.main.temp;
   city.innerHTML = response.data.name;
-  temperature.innerHTML = Math.round(response.data.main.temp);
+  temperature.innerHTML = Math.round(celsiusTemperature);
   date.innerHTML = formatDate(response.data.dt * 1000);
   description.innerHTML = response.data.weather[0].description;
   humidity.innerHTML = response.data.main.humidity;
@@ -55,6 +56,32 @@ function handleSubmit(event) {
   searchCity(cityInput.value);
 }
 
-searchCity("Venice");
+function showFahrenheitTemperature(event) {
+  event.preventDefault();
+  celsius.classList.remove("active");
+  fahrenheit.classList.add("active");
+  let temperature = document.querySelector("#temperature");
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  temperature.innerHTML = Math.round(fahrenheitTemperature);
+}
+
+function showCelsiusTemperature(event) {
+  event.preventDefault();
+  celsius.classList.add("active");
+  fahrenheit.classList.remove("active");
+  let temperature = document.querySelector("#temperature");
+  temperature.innerHTML = Math.round(celsiusTemperature);
+}
+
+let celsiusTemperature = null;
+
 let form = document.querySelector("#search-city");
 form.addEventListener("submit", handleSubmit);
+
+let fahrenheit = document.querySelector("#fahrenheit-temperature");
+fahrenheit.addEventListener("click", showFahrenheitTemperature);
+
+let celsius = document.querySelector("#celsius-temperature");
+celsius.addEventListener("click", showCelsiusTemperature);
+
+searchCity("Venice");
