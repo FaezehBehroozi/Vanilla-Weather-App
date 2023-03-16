@@ -21,6 +21,30 @@ function formatDate(timestamp) {
   return `${day} ${hour}:${minute}`;
 }
 
+function displayForecast() {
+  let forecast = document.querySelector("#forecast");
+  let days = ["Fri", "Sat", "Sun", "Mon", "Tue", "Wed"];
+  let forecastHTML = `<div class="row">`;
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+    <div class="col-2">
+      <div>
+        ${day}
+      </div>
+      <img src="image/rainy.png" alt="sunny" class="future" />
+      <div>
+        <span class="high"> 14° </span> 
+        <span class="low"> 8° </span>
+      </div>
+    </div>
+  `;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecast.innerHTML = forecastHTML;
+}
+
 function showTemperature(response) {
   let city = document.querySelector("#city-name");
   let temperature = document.querySelector("#temperature");
@@ -85,3 +109,4 @@ let celsius = document.querySelector("#celsius-temperature");
 celsius.addEventListener("click", showCelsiusTemperature);
 
 searchCity("Venice");
+displayForecast();
