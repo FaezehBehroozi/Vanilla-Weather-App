@@ -88,11 +88,11 @@ a:hover {
   max-width: 40px;
 }
 
-.low {
+.min {
   color: #c9c9c9;
 }
 
-.high {
+.max {
   color: #262626;
 }
 
